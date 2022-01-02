@@ -1,0 +1,27 @@
+# Exercise Progress
+
+- [x] Variables
+- [x] Functions
+- [x] If
+- [x] Quiz 1
+- [x] Move_semantics
+- [x] Primitive_types
+- [x] Structs
+- [x] Enums
+- [x] Modules
+- [x] Collections
+- [x] Strings
+- [x] Quiz 2
+- [x] Error_handling
+- [x] Generics
+- [x] Option
+- [x] Traits
+- [x] Tests
+- [x] Quiz 3
+- [x] Advanced errors
+- [x] Standard_library_types
+- [x] Threads
+- [x] Macros
+- [s] Quiz 4
+- [x] Clippy
+- [x] Conversions

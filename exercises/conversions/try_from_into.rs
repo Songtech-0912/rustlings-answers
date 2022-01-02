@@ -21,8 +21,6 @@ enum IntoColorError {
     IntConversion,
 }
 
-// I AM NOT DONE
-
 // Your task is to complete this implementation
 // and return an Ok result of inner type Color.
 // You need to create an implementation for a tuple of three integers,
@@ -32,10 +30,25 @@ enum IntoColorError {
 // but the slice implementation needs to check the slice length!
 // Also note that correct RGB color values must be integers in the 0..=255 range.
 
+// Checks for integer in 0..=255 range
+fn isInRange(r: i16, g: i16, b: i16) -> bool {
+    let range = 0..=255;
+    range.contains(&r) && range.contains(&g) && range.contains(&b)
+}
+
 // Tuple implementation
 impl TryFrom<(i16, i16, i16)> for Color {
     type Error = IntoColorError;
     fn try_from(tuple: (i16, i16, i16)) -> Result<Self, Self::Error> {
+        if isInRange(tuple.0, tuple.1, tuple.2) {
+            Ok(Color{
+                red: tuple.0.try_into().unwrap(),
+                green: tuple.1.try_into().unwrap(),
+                blue: tuple.2.try_into().unwrap(),
+            })
+        } else {
+            Err(IntoColorError::IntConversion)
+        }
     }
 }
 
@@ -43,6 +56,15 @@ impl TryFrom<(i16, i16, i16)> for Color {
 impl TryFrom<[i16; 3]> for Color {
     type Error = IntoColorError;
     fn try_from(arr: [i16; 3]) -> Result<Self, Self::Error> {
+        if isInRange(arr[0], arr[1], arr[2]) {
+            Ok(Color{
+                red: arr[0].try_into().unwrap(),
+                green: arr[1].try_into().unwrap(),
+                blue: arr[2].try_into().unwrap(),
+            })
+        } else {
+            Err(IntoColorError::IntConversion)
+        }
     }
 }
 
@@ -50,6 +72,18 @@ impl TryFrom<[i16; 3]> for Color {
 impl TryFrom<&[i16]> for Color {
     type Error = IntoColorError;
     fn try_from(slice: &[i16]) -> Result<Self, Self::Error> {
+        if slice.len() != 3 {
+            return Err(IntoColorError::BadLen);
+        }
+        if isInRange(slice[0], slice[1], slice[2]) {
+            Ok(Color{
+                red: slice[0].try_into().unwrap(),
+                green: slice[1].try_into().unwrap(),
+                blue: slice[2].try_into().unwrap(),
+            })
+        } else {
+            Err(IntoColorError::IntConversion)
+        }
     }
 }
 

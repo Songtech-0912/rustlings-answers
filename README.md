@@ -2,7 +2,13 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-108-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-# rustlings 🦀❤️
+# Rustlings Answers 🦀❤️
+
+These are my answers to Rustlings! Check them out [here](rustlings/exercises)!
+
+Alternatively, if you just want to find out more about Rustlings: see the rest of the README below!
+
+## What is Rustlings?
 
 Greetings and welcome to `rustlings`. This project contains small exercises to get you used to reading and writing Rust code. This includes reading and responding to compiler messages!
 
