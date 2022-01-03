@@ -4,7 +4,7 @@
 
 # Rustlings Answers 🦀❤️
 
-These are my answers to Rustlings! Check them out [here](rustlings/exercises)!
+These are my answers to Rustlings! Check them out [here](./exercises/)!
 
 Alternatively, if you just want to find out more about Rustlings: see the rest of the README below!
 
